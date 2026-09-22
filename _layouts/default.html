@@ -1,5 +1,9 @@
 <!doctype html>
-<html lang="{{ page.lang | default: 'en' }}">
+
+<html
+    lang="{{ page.lang | default: 'en' }}"
+    {% if page.lang == "ar" %}dir="rtl"{% else %}dir="ltr"{% endif %}
+>
 
 <head>
     <meta charset="utf-8">
@@ -25,21 +29,21 @@
     {% endif %}
 
     <link
-    rel="stylesheet"
-    href="{{ '/style.css' | relative_url }}"
+        rel="stylesheet"
+        href="{{ '/style.css' | relative_url }}"
     >
 
     {% include language-alternates.html %}
 </head>
 
 <body>
+
     {% include language-switcher.html %}
 
-     {% include breadcrumbs.html %}
+    {% include breadcrumbs.html %}
 
     {{ content }}
 
-    
 </body>
 
 </html>
