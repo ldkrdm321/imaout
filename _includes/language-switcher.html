@@ -1,33 +1,44 @@
 {% if page.translation_key %}
 
     {% assign translations = site.pages
-        | where: "translation_key", page.translation_key
-        | sort: "lang" %}
+        | where: "translation_key", page.translation_key %}
+
+    {% assign language_order = "en,nl,es,fr,pt,it,tr,ar" | split: "," %}
 
     {% if translations.size > 1 %}
         <nav class="language-switcher" aria-label="Language selection">
-            {% for translation in translations %}
 
-                {% assign language_label = translation.lang | upcase %}
+            {% for code in language_order %}
 
-                {% if translation.lang == page.lang %}
-                    <strong
-                        lang="{{ translation.lang }}"
-                        aria-current="page"
-                    >
-                        {{ language_label }}
-                    </strong>
-                {% else %}
-                    <a
-                        href="{{ translation.url | relative_url }}"
-                        lang="{{ translation.lang }}"
-                        hreflang="{{ translation.lang }}"
-                    >
-                        {{ language_label }}
-                    </a>
+                {% assign translation = translations
+                    | where: "lang", code
+                    | first %}
+
+                {% if translation %}
+
+                    {% assign language_label = code | upcase %}
+
+                    {% if translation.lang == page.lang %}
+                        <strong
+                            lang="{{ translation.lang }}"
+                            aria-current="page"
+                        >
+                            {{ language_label }}
+                        </strong>
+                    {% else %}
+                        <a
+                            href="{{ translation.url | relative_url }}"
+                            lang="{{ translation.lang }}"
+                            hreflang="{{ translation.lang }}"
+                        >
+                            {{ language_label }}
+                        </a>
+                    {% endif %}
+
                 {% endif %}
 
             {% endfor %}
+
         </nav>
     {% endif %}
 
