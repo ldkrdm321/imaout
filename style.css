@@ -1,10 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
 * {
     box-sizing: border-box;
 }
 
+
+/* =========================
+   GENERAL
+   ========================= */
+
 body {
-    background: #ffffff;
-    color: #111111;
+    background: #6fa8ddff;
+    color: #ffffff;
 
     font-family:
         -apple-system,
@@ -21,46 +29,83 @@ body {
     padding: 80px 30px;
 }
 
+
+/* =========================
+   HEADINGS
+   ========================= */
+
+h1,
+h2,
+h3 {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+}
+
 h1 {
     font-size: 56px;
     line-height: 1;
-    letter-spacing: -3px;
+    letter-spacing: 0;
     margin: 0 0 35px;
 }
 
 h2 {
     font-size: 25px;
-    letter-spacing: -0.5px;
+    letter-spacing: 0;
     margin-top: 50px;
 }
+
+
+/* =========================
+   TEXT
+   ========================= */
 
 p {
     max-width: 650px;
 }
 
+small {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* =========================
+   LINKS
+   ========================= */
+
 a {
-    color: #111111;
+    color: #ffffff;
     text-decoration: underline;
     text-underline-offset: 4px;
 }
 
 a:hover {
-    color: #666666;
+    color: rgba(255, 255, 255, 0.7);
 }
+
+
+/* =========================
+   HORIZONTAL LINES
+   ========================= */
 
 hr {
     border: 0;
-    border-top: 1px solid #dddddd;
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
     margin: 50px 0;
 }
 
+
+/* =========================
+   DETAILS / ACCORDIONS
+   ========================= */
+
 details {
-    border-top: 1px solid #dddddd;
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
     padding: 18px 0;
 }
 
 details:last-of-type {
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 summary {
@@ -68,6 +113,7 @@ summary {
     font-size: 21px;
     font-weight: 600;
     list-style: none;
+    color: #ffffff;
 }
 
 summary::-webkit-details-marker {
@@ -85,6 +131,11 @@ details[open] summary::before {
     content: "−";
 }
 
+
+/* =========================
+   LISTS
+   ========================= */
+
 ul {
     list-style: none;
     margin: 15px 0 0 28px;
@@ -95,6 +146,11 @@ li {
     margin: 9px 0;
 }
 
+
+/* =========================
+   IMAGES
+   ========================= */
+
 img {
     display: block;
     max-width: 100%;
@@ -102,23 +158,10 @@ img {
     margin: 35px 0;
 }
 
-small {
-    color: #777777;
-}
 
-@media (max-width: 600px) {
-    body {
-        padding: 45px 20px;
-        font-size: 17px;
-    }
-
-    h1 {
-        font-size: 40px;
-        letter-spacing: -2px;
-    }
-}
-
-
+/* =========================
+   ASCII ART
+   ========================= */
 
 .ascii-art {
     width: 100%;
@@ -130,131 +173,151 @@ small {
     display: block;
     width: 100%;
     height: 1050px;
-
     border: 0;
     overflow: hidden;
 }
 
 
+/* =========================
+   ARTICLES
+   ========================= */
 
 .article-header,
-        .article-body,
-        .article-footer {
-            max-width: 720px;
-        }
+.article-body,
+.article-footer {
+    max-width: 720px;
+}
 
-        .back-link {
-            display: inline-block;
-            margin-bottom: 55px;
-        }
+.back-link {
+    display: inline-block;
+    margin-bottom: 55px;
+}
 
-        .article-header h1 {
-            margin-bottom: 20px;
-        }
+.article-header h1 {
+    margin-bottom: 20px;
+}
 
-        .article-meta {
-            color: #666;
-            margin-bottom: 35px;
-        }
+.article-meta {
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 35px;
+}
 
-        .article-intro {
-            font-size: 22px;
-            line-height: 1.5;
-            margin-bottom: 55px;
-        }
+.article-intro {
+    font-size: 22px;
+    line-height: 1.5;
+    margin-bottom: 55px;
+}
 
-        .article-body h2 {
-            margin-top: 65px;
-        }
+.article-body h2 {
+    margin-top: 65px;
+}
 
-        .article-body h3 {
-            font-size: 20px;
-            margin-top: 42px;
-        }
+.article-body h3 {
+    font-size: 20px;
+    margin-top: 42px;
+}
 
-        blockquote {
-            border-left: 2px solid #111;
-            margin: 35px 0;
-            padding-left: 25px;
-        }
 
-        figure {
-            margin: 45px 0;
-        }
+/* =========================
+   BLOCKQUOTES
+   ========================= */
 
-        figure img {
-            margin-bottom: 12px;
-        }
+blockquote {
+    border-left: 2px solid #ffffff;
+    margin: 35px 0;
+    padding-left: 25px;
+}
 
-        figcaption {
-            color: #666;
-            font-size: 15px;
-            line-height: 1.45;
-        }
 
-        /* The clickable footnote number. */
-        .footnote-button {
-            appearance: none;
-            background: none;
-            border: 0;
-            color: inherit;
-            cursor: pointer;
-            font: inherit;
-            margin: 0 0.05em;
-            padding: 0 0.1em;
-            text-decoration: underline;
-            text-underline-offset: 2px;
-            vertical-align: super;
-            font-size: 0.72em;
-            line-height: 1;
-        }
+/* =========================
+   FIGURES
+   ========================= */
 
-        .footnote-button:hover,
-        .footnote-button:focus-visible {
-            color: #666;
-        }
+figure {
+    margin: 45px 0;
+}
 
-        /* Hidden until its number is clicked. */
-        .footnote {
-            background: #f3f3f3;
-            border-left: 3px solid #111;
-            margin: 18px 0 28px;
-            padding: 18px 20px;
-            font-size: 15px;
-            line-height: 1.5;
-        }
+figure img {
+    margin-bottom: 12px;
+}
 
-        .footnote[hidden] {
-            display: none;
-        }
+figcaption {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 15px;
+    line-height: 1.45;
+}
 
-        /* Pandoc stores the source notes here for the script. Readers see the
-           expandable copies placed beside the relevant paragraphs instead. */
-        .footnotes {
-            display: none;
-        }
 
-        .footnote p {
-            margin: 0;
-        }
+/* =========================
+   FOOTNOTES
+   ========================= */
 
-        .article-footer {
-            border-top: 1px solid #ddd;
-            margin-top: 70px;
-            padding-top: 25px;
-        }
+/* The clickable footnote number */
+.footnote-button {
+    appearance: none;
+    background: none;
+    border: 0;
+    color: #ffffff;
+    cursor: pointer;
+    font: inherit;
+    margin: 0 0.05em;
+    padding: 0 0.1em;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    vertical-align: super;
+    font-size: 0.72em;
+    line-height: 1;
+}
 
-        @media (max-width: 600px) {
-            .article-intro {
-                font-size: 20px;
-            }
+.footnote-button:hover,
+.footnote-button:focus-visible {
+    color: rgba(255, 255, 255, 0.7);
+}
 
-            .back-link {
-                margin-bottom: 40px;
-            }
-        }
 
-        
+/* Hidden until its number is clicked */
+
+.footnote {
+    background: rgba(255, 255, 255, 0.12);
+    border-left: 3px solid #ffffff;
+    margin: 18px 0 28px;
+    padding: 18px 20px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #ffffff;
+}
+
+.footnote[hidden] {
+    display: none;
+}
+
+
+/* Pandoc source notes */
+
+.footnotes {
+    display: none;
+}
+
+.footnote p {
+    margin: 0;
+}
+
+
+/* =========================
+   ARTICLE FOOTER
+   ========================= */
+
+.article-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    margin-top: 70px;
+    padding-top: 25px;
+}
+
+
+/* =========================
+   LANGUAGE SWITCHER
+   ========================= */
+
 .language-switcher {
     display: flex;
     gap: 12px;
@@ -264,7 +327,7 @@ small {
 
 .language-switcher a,
 .language-switcher strong {
-    color: #111111;
+    color: #ffffff;
 }
 
 .language-switcher strong {
@@ -276,10 +339,15 @@ small {
     text-underline-offset: 4px;
 }
 
+
+/* =========================
+   BREADCRUMBS
+   ========================= */
+
 .breadcrumbs {
     margin: 0 0 45px;
     font-size: 15px;
-    color: #777777;
+    color: rgba(255, 255, 255, 0.75);
 }
 
 .breadcrumbs ol {
@@ -298,13 +366,39 @@ small {
 .breadcrumbs li:not(:last-child)::after {
     content: "/";
     margin: 0 9px;
-    color: #bbbbbb;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .breadcrumbs a {
-    color: #666666;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .breadcrumbs [aria-current="page"] {
-    color: #111111;
+    color: #ffffff;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 45px 20px;
+        font-size: 17px;
+    }
+
+    h1 {
+        font-size: 40px;
+        letter-spacing: 0;
+    }
+
+    .article-intro {
+        font-size: 20px;
+    }
+
+    .back-link {
+        margin-bottom: 40px;
+    }
 }
