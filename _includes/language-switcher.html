@@ -1,8 +1,6 @@
 {% if page.translation_key %}
 
-    {% assign all_content = site.pages | concat: site.abyss %}
-
-    {% assign translations = all_content
+    {% assign translations = site.pages
         | where: "translation_key", page.translation_key
         | sort: "lang" %}
 
