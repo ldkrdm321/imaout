@@ -2,24 +2,33 @@
 
     {% assign path_parts = page.url | split: "/" %}
 
-    {% if page.lang == "nl" %}
-        {% assign home_url = "/nl/" %}
-        {% assign home_label = "Home" %}
-        {% assign current_path = "/nl" %}
+    {% assign language_codes = "en,es,fr,pt,it,nl,tr,ar" | split: "," %}
+
+    {% if page.lang and page.lang != "en" %}
+        {% assign home_url = "/" | append: page.lang | append: "/" %}
+        {% assign current_path = "/" | append: page.lang %}
     {% else %}
         {% assign home_url = "/" %}
-        {% assign home_label = "Home" %}
         {% assign current_path = "" %}
     {% endif %}
+
+    {% assign home_label = "Home" %}
 
     <nav class="breadcrumbs" aria-label="Breadcrumb">
         <ol>
             <li>
-                <a href="{{ home_url }}">{{ home_label }}</a>
+                <a href="{{ home_url | relative_url }}">{{ home_label }}</a>
             </li>
 
             {% for part in path_parts %}
-                {% if part != "" and part != "nl" %}
+
+                {% assign is_language_folder = false %}
+
+                {% if language_codes contains part %}
+                    {% assign is_language_folder = true %}
+                {% endif %}
+
+                {% if part != "" and is_language_folder == false %}
 
                     {% assign current_path = current_path
                         | append: "/"
