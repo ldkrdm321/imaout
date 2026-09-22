@@ -1,0 +1,7 @@
+title: Alexander Beunder
+url: "https://alexanderbeunder.com"
+baseurl: ""
+
+collections:
+  abyss:
+    output: true

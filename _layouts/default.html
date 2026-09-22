@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="{{ page.lang | default: 'en' }}">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>
+        {% if page.title %}
+            {{ page.title }}
+        {% else %}
+            {{ site.title }}
+        {% endif %}
+    </title>
+
+    {% if page.description %}
+        <meta
+            name="description"
+            content="{{ page.description }}"
+        >
+    {% endif %}
+
+    <link
+        rel="stylesheet"
+        href="{{ '/style.css' | relative_url }}"
+    >
+
+    {% include language-alternates.html %}
+</head>
+
+<body>
+    {% include language-switcher.html %}
+
+     {% include breadcrumbs.html %}
+
+    {{ content }}
+
+    
+</body>
+
+</html>

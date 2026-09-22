@@ -1,0 +1,7 @@
+- from: shell
+  to: frits-bottcher
+  relationship: funded
+
+- from: frits-bottcher
+  to: sepp
+  relationship: connected-to

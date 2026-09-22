@@ -1,0 +1,79 @@
+{% assign connection_count = 0 %}
+
+{% capture connection_items %}
+    {% for connection in site.data.connections %}
+        {% assign connected_id = "" %}
+        {% assign direction = "" %}
+
+        {% if connection.from == page.entity_id %}
+            {% assign connected_id = connection.to %}
+            {% assign direction = "forward" %}
+        {% elsif connection.to == page.entity_id %}
+            {% assign connected_id = connection.from %}
+            {% assign direction = "reverse" %}
+        {% endif %}
+
+        {% if connected_id != "" %}
+            {% assign connection_count = connection_count | plus: 1 %}
+
+            {% assign connected_page = site.abyss
+                | where: "entity_id", connected_id
+                | where: "lang", page.lang
+                | first %}
+
+            {% assign relationship_translations =
+                site.data.relationships[connection.relationship] %}
+
+            {% assign language_labels =
+                relationship_translations[page.lang] %}
+
+            {% assign relationship_label =
+                language_labels[direction] %}
+
+            {% unless relationship_label %}
+                {% assign relationship_label =
+                    connection.relationship
+                    | replace: "-", " "
+                    | capitalize %}
+            {% endunless %}
+
+            <li>
+                <span class="relationship">
+                    {{ relationship_label }}:
+                </span>
+
+                {% if connected_page %}
+                    <a href="{{ connected_page.url | relative_url }}">
+                        {{ connected_page.title }}
+                    </a>
+                {% else %}
+                    {{ connected_id }}
+
+                    <small>
+                        {% if page.lang == "nl" %}
+                            (pagina niet gevonden)
+                        {% else %}
+                            (page not found)
+                        {% endif %}
+                    </small>
+                {% endif %}
+            </li>
+        {% endif %}
+    {% endfor %}
+{% endcapture %}
+
+{% if connection_count > 0 %}
+<section class="the-abyss-connections">
+    <h2>
+        {% if page.lang == "nl" %}
+            Connecties
+        {% else %}
+            Connections
+        {% endif %}
+    </h2>
+
+    <ul>
+        {{ connection_items }}
+    </ul>
+</section>
+{% endif %}

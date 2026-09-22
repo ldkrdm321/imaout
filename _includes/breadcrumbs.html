@@ -1,0 +1,75 @@
+{% unless page.translation_key == "homepage" %}
+
+    {% assign path_parts = page.url | split: "/" %}
+
+    {% if page.lang == "nl" %}
+        {% assign home_url = "/nl/" %}
+        {% assign home_label = "Home" %}
+        {% assign current_path = "/nl" %}
+    {% else %}
+        {% assign home_url = "/" %}
+        {% assign home_label = "Home" %}
+        {% assign current_path = "" %}
+    {% endif %}
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+            <li>
+                <a href="{{ home_url }}">{{ home_label }}</a>
+            </li>
+
+            {% for part in path_parts %}
+                {% if part != "" and part != "nl" %}
+
+                    {% assign current_path = current_path
+                        | append: "/"
+                        | append: part %}
+
+                    {% assign directory_url = current_path | append: "/" %}
+
+                    {% assign matching_page = site.pages
+                        | where: "url", current_path
+                        | first %}
+
+                    {% unless matching_page %}
+                        {% assign matching_page = site.pages
+                            | where: "url", directory_url
+                            | first %}
+                    {% endunless %}
+
+                    {% if matching_page %}
+                        {% assign crumb_label = matching_page.breadcrumb
+                            | default: matching_page.title %}
+                    {% else %}
+                        {% assign crumb_label = part
+                            | remove: ".html"
+                            | replace: "-", " "
+                            | capitalize %}
+                    {% endif %}
+
+                    {% assign is_current_page = false %}
+
+                    {% if page.url == current_path or page.url == directory_url %}
+                        {% assign is_current_page = true %}
+                    {% endif %}
+
+                    <li>
+                        {% if is_current_page %}
+                            <span aria-current="page">
+                                {{ crumb_label }}
+                            </span>
+                        {% elsif matching_page %}
+                            <a href="{{ matching_page.url | relative_url }}">
+                                {{ crumb_label }}
+                            </a>
+                        {% else %}
+                            <span>{{ crumb_label }}</span>
+                        {% endif %}
+                    </li>
+
+                {% endif %}
+            {% endfor %}
+        </ol>
+    </nav>
+
+{% endunless %}

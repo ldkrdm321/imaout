@@ -1,0 +1,310 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #ffffff;
+    color: #111111;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+
+    font-size: 18px;
+    line-height: 1.6;
+
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 30px;
+}
+
+h1 {
+    font-size: 56px;
+    line-height: 1;
+    letter-spacing: -3px;
+    margin: 0 0 35px;
+}
+
+h2 {
+    font-size: 25px;
+    letter-spacing: -0.5px;
+    margin-top: 50px;
+}
+
+p {
+    max-width: 650px;
+}
+
+a {
+    color: #111111;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+a:hover {
+    color: #666666;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #dddddd;
+    margin: 50px 0;
+}
+
+details {
+    border-top: 1px solid #dddddd;
+    padding: 18px 0;
+}
+
+details:last-of-type {
+    border-bottom: 1px solid #dddddd;
+}
+
+summary {
+    cursor: pointer;
+    font-size: 21px;
+    font-weight: 600;
+    list-style: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: "+";
+    display: inline-block;
+    width: 28px;
+    font-weight: 400;
+}
+
+details[open] summary::before {
+    content: "−";
+}
+
+ul {
+    list-style: none;
+    margin: 15px 0 0 28px;
+    padding: 0;
+}
+
+li {
+    margin: 9px 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 35px 0;
+}
+
+small {
+    color: #777777;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 45px 20px;
+        font-size: 17px;
+    }
+
+    h1 {
+        font-size: 40px;
+        letter-spacing: -2px;
+    }
+}
+
+
+
+.ascii-art {
+    width: 100%;
+    overflow: hidden;
+    margin: 50px 0;
+}
+
+.ascii-art iframe {
+    display: block;
+    width: 100%;
+    height: 1050px;
+
+    border: 0;
+    overflow: hidden;
+}
+
+
+
+.article-header,
+        .article-body,
+        .article-footer {
+            max-width: 720px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 55px;
+        }
+
+        .article-header h1 {
+            margin-bottom: 20px;
+        }
+
+        .article-meta {
+            color: #666;
+            margin-bottom: 35px;
+        }
+
+        .article-intro {
+            font-size: 22px;
+            line-height: 1.5;
+            margin-bottom: 55px;
+        }
+
+        .article-body h2 {
+            margin-top: 65px;
+        }
+
+        .article-body h3 {
+            font-size: 20px;
+            margin-top: 42px;
+        }
+
+        blockquote {
+            border-left: 2px solid #111;
+            margin: 35px 0;
+            padding-left: 25px;
+        }
+
+        figure {
+            margin: 45px 0;
+        }
+
+        figure img {
+            margin-bottom: 12px;
+        }
+
+        figcaption {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.45;
+        }
+
+        /* The clickable footnote number. */
+        .footnote-button {
+            appearance: none;
+            background: none;
+            border: 0;
+            color: inherit;
+            cursor: pointer;
+            font: inherit;
+            margin: 0 0.05em;
+            padding: 0 0.1em;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            vertical-align: super;
+            font-size: 0.72em;
+            line-height: 1;
+        }
+
+        .footnote-button:hover,
+        .footnote-button:focus-visible {
+            color: #666;
+        }
+
+        /* Hidden until its number is clicked. */
+        .footnote {
+            background: #f3f3f3;
+            border-left: 3px solid #111;
+            margin: 18px 0 28px;
+            padding: 18px 20px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .footnote[hidden] {
+            display: none;
+        }
+
+        /* Pandoc stores the source notes here for the script. Readers see the
+           expandable copies placed beside the relevant paragraphs instead. */
+        .footnotes {
+            display: none;
+        }
+
+        .footnote p {
+            margin: 0;
+        }
+
+        .article-footer {
+            border-top: 1px solid #ddd;
+            margin-top: 70px;
+            padding-top: 25px;
+        }
+
+        @media (max-width: 600px) {
+            .article-intro {
+                font-size: 20px;
+            }
+
+            .back-link {
+                margin-bottom: 40px;
+            }
+        }
+
+        
+.language-switcher {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 40px;
+    font-size: 15px;
+}
+
+.language-switcher a,
+.language-switcher strong {
+    color: #111111;
+}
+
+.language-switcher strong {
+    text-decoration: none;
+}
+
+.language-switcher a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.breadcrumbs {
+    margin: 0 0 45px;
+    font-size: 15px;
+    color: #777777;
+}
+
+.breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumbs li {
+    margin: 0;
+}
+
+.breadcrumbs li:not(:last-child)::after {
+    content: "/";
+    margin: 0 9px;
+    color: #bbbbbb;
+}
+
+.breadcrumbs a {
+    color: #666666;
+}
+
+.breadcrumbs [aria-current="page"] {
+    color: #111111;
+}

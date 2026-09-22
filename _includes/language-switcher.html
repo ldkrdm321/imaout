@@ -1,0 +1,36 @@
+{% if page.translation_key %}
+
+    {% assign all_content = site.pages | concat: site.abyss %}
+
+    {% assign translations = all_content
+        | where: "translation_key", page.translation_key
+        | sort: "lang" %}
+
+    {% if translations.size > 1 %}
+        <nav class="language-switcher" aria-label="Language selection">
+            {% for translation in translations %}
+
+                {% assign language_label = translation.lang | upcase %}
+
+                {% if translation.lang == page.lang %}
+                    <strong
+                        lang="{{ translation.lang }}"
+                        aria-current="page"
+                    >
+                        {{ language_label }}
+                    </strong>
+                {% else %}
+                    <a
+                        href="{{ translation.url | relative_url }}"
+                        lang="{{ translation.lang }}"
+                        hreflang="{{ translation.lang }}"
+                    >
+                        {{ language_label }}
+                    </a>
+                {% endif %}
+
+            {% endfor %}
+        </nav>
+    {% endif %}
+
+{% endif %}

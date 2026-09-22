@@ -1,0 +1,32 @@
+<link
+    rel="canonical"
+    href="{{ page.url | absolute_url }}"
+>
+
+{% if page.translation_key %}
+
+    {% assign all_content = site.pages | concat: site.abyss %}
+    {% assign translations = all_content
+        | where: "translation_key", page.translation_key %}
+
+    {% for translation in translations %}
+        <link
+            rel="alternate"
+            hreflang="{{ translation.lang }}"
+            href="{{ translation.url | absolute_url }}"
+        >
+    {% endfor %}
+
+    {% assign english_version = translations
+        | where: "lang", "en"
+        | first %}
+
+    {% if english_version %}
+        <link
+            rel="alternate"
+            hreflang="x-default"
+            href="{{ english_version.url | absolute_url }}"
+        >
+    {% endif %}
+
+{% endif %}
