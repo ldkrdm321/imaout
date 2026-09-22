@@ -137,7 +137,7 @@ details[open] summary::before {
    ========================= */
 
 ul {
-    list-style: none;
+    list-style: disc;
     margin: 15px 0 0 28px;
     padding: 0;
 }
