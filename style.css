@@ -402,3 +402,21 @@ figcaption {
         margin-bottom: 40px;
     }
 }
+
+.action-button {
+    display: inline-block;
+    background: #ffffff;
+    color: #6fa8dd;
+    font-family: "Anton", sans-serif;
+    font-size: 28px;
+    line-height: 1.2;
+    text-decoration: none;
+    padding: 14px 18px;
+    margin: 20px 0;
+}
+
+.action-button:hover {
+    background: rgba(255, 255, 255, 0.85);
+    color: #6fa8dd;
+    text-decoration: none;
+}
