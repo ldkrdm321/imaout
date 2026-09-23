@@ -159,24 +159,6 @@ img {
 }
 
 
-/* =========================
-   ASCII ART
-   ========================= */
-
-.ascii-art {
-    width: 100%;
-    overflow: hidden;
-    margin: 50px 0;
-}
-
-.ascii-art iframe {
-    display: block;
-    width: 100%;
-    height: 1050px;
-    border: 0;
-    overflow: hidden;
-}
-
 
 /* =========================
    ARTICLES
@@ -419,4 +401,16 @@ figcaption {
     background: rgba(255, 255, 255, 0.85);
     color: #6fa8dd;
     text-decoration: none;
+}
+
+.typing-text {
+    min-height: 2em;
+    margin: 35px 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.typing-text::after {
+    content: "|";
+    margin-left: 3px;
 }
