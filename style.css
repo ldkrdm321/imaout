@@ -420,19 +420,3 @@ figcaption {
     color: #6fa8dd;
     text-decoration: none;
 }
-
-.campaign-footer {
-    color: #e0dfe5;
-}
-
-.campaign-footer a {
-    color: #e0dfe5;
-}
-
-.campaign-footer a:hover {
-    color: #ffffff;
-}
-
-.campaign-footer hr {
-    border-top-color: #e0dfe5;
-}
