@@ -28,7 +28,7 @@ document.querySelectorAll(".typing-text").forEach((element) => {
 
                 // Short pause before next quote
                 setTimeout(type, 300);
-            }, 5000);
+            }, 7500);
         }
     }
 
