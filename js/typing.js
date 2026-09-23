@@ -6,24 +6,29 @@ document.querySelectorAll(".typing-text").forEach((element) => {
     let started = false;
 
     function type() {
-        const text = lines[line];
+        const current = lines[line];
+        const text = current.text;
 
         character++;
-        element.textContent = text.slice(0, character);
+
+        element.innerHTML =
+            '<a href="' + current.url + '" target="_blank" rel="noopener noreferrer">' +
+            text.slice(0, character) +
+            '</a>';
 
         if (character < text.length) {
             // Typing speed
-            setTimeout(type, 12);
+            setTimeout(type, 15);
         } else {
-            // Keep completed sentence visible for 5 seconds
+            // Keep completed quote visible for 5 seconds
             setTimeout(() => {
-                element.textContent = "";
+                element.innerHTML = "";
                 character = 0;
                 line = (line + 1) % lines.length;
 
-                // Short pause before next sentence
+                // Short pause before next quote
                 setTimeout(type, 300);
-            }, 7500);
+            }, 5000);
         }
     }
 
