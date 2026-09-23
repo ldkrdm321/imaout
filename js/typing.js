@@ -11,7 +11,7 @@ document.querySelectorAll(".typing-text").forEach((element) => {
         element.textContent = text.slice(0, character);
 
         if (character < text.length) {
-            setTimeout(type, 5);
+            setTimeout(type, 12);
         } else {
             // Keep the completed sentence visible for 2 seconds
             setTimeout(() => {
