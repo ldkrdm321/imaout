@@ -36,7 +36,12 @@ document.querySelectorAll(".typing-text").forEach((element) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting && !started) {
                 started = true;
-                type();
+
+                // Wait 800ms after becoming visible
+                setTimeout(() => {
+                    type();
+                }, 800);
+
                 observer.unobserve(element);
             }
         });
