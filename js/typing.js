@@ -3,31 +3,27 @@ document.querySelectorAll(".typing-text").forEach((element) => {
 
     let line = 0;
     let character = 0;
-    let deleting = false;
 
     function type() {
         const text = lines[line];
 
-        if (!deleting) {
-            character++;
-            element.textContent = text.slice(0, character);
+        character++;
+        element.textContent = text.slice(0, character);
 
-            if (character === text.length) {
-                deleting = true;
-                setTimeout(type, 1800);
-                return;
-            }
+        if (character < text.length) {
+            setTimeout(type, 60);
         } else {
-            character--;
-            element.textContent = text.slice(0, character);
-
-            if (character === 0) {
-                deleting = false;
+            // Keep the completed sentence visible for 2 seconds
+            setTimeout(() => {
+                // Clear it instantly and start the next sentence
+                element.textContent = "";
+                character = 0;
                 line = (line + 1) % lines.length;
-            }
-        }
 
-        setTimeout(type, deleting ? 30 : 60);
+                // Short pause before typing the next sentence
+                setTimeout(type, 300);
+            }, 2000);
+        }
     }
 
     type();
