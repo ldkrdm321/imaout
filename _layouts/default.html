@@ -28,6 +28,73 @@
         >
     {% endif %}
 
+
+    <!-- Open Graph / link preview -->
+
+    <meta
+        property="og:title"
+        content="{{ page.title | default: site.title }}"
+    >
+
+    <meta
+        property="og:description"
+        content="{{ page.description | default: site.description }}"
+    >
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:url"
+        content="{{ page.url | absolute_url }}"
+    >
+
+    <meta
+        property="og:image"
+        content="{{ '/images/imaoutthumbnail.jpg' | absolute_url }}"
+    >
+
+    <meta
+        property="og:image:width"
+        content="1200"
+    >
+
+    <meta
+        property="og:image:height"
+        content="630"
+    >
+
+    <meta
+        property="og:site_name"
+        content="IMA OUT"
+    >
+
+
+    <!-- X / Twitter -->
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
+
+    <meta
+        name="twitter:title"
+        content="{{ page.title | default: site.title }}"
+    >
+
+    <meta
+        name="twitter:description"
+        content="{{ page.description | default: site.description }}"
+    >
+
+    <meta
+        name="twitter:image"
+        content="{{ '/images/imaoutthumbnail.jpg' | absolute_url }}"
+    >
+
+
     <link
         rel="stylesheet"
         href="{{ '/style.css' | relative_url }}"
@@ -46,7 +113,7 @@
 
     {% include campaign-footer.html %}
 
-<script src="{{ '/js/typing.js' | relative_url }}"></script>
+    <script src="{{ '/js/typing.js' | relative_url }}"></script>
 
 </body>
 
