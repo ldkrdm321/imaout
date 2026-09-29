@@ -68,6 +68,14 @@ small {
     color: rgba(255, 255, 255, 0.75);
 }
 
+.small-grey-link {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.small-grey-link:hover {
+    color: rgba(255, 255, 255, 0.55);
+}
+
 
 /* =========================
    LINKS
