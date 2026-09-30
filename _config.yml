@@ -3,3 +3,6 @@ description: Suspend the Israeli Medical Association from the World Medical Asso
 
 url: "https://imaout.com"
 baseurl: ""
+
+plugins:
+  - jekyll-sitemap
