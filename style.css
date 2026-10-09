@@ -607,3 +607,88 @@ figcaption {
 }
 
 /* End of Breaking news announcement */
+
+
+
+/* Instagram horizontal carousel */
+
+.instagram-gallery {
+    margin: 55px 0;
+    width: 100%;
+}
+
+.instagram-gallery h2 {
+    margin-bottom: 10px;
+}
+
+.instagram-gallery-intro {
+    margin-bottom: 24px;
+}
+
+.instagram-gallery-track {
+    display: flex;
+    gap: 22px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 8px 2px 22px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.instagram-gallery-card {
+    flex: 0 0 340px;
+    width: 340px;
+    min-width: 0;
+    scroll-snap-align: start;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Keep Instagram embeds within each card */
+.instagram-gallery-card .instagram-media {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+}
+
+/* Visible horizontal scrollbar */
+.instagram-gallery-track::-webkit-scrollbar {
+    height: 8px;
+}
+
+.instagram-gallery-track::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 8px;
+}
+
+.instagram-gallery-track::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.instagram-gallery-follow {
+    margin-top: 18px;
+    font-weight: 700;
+}
+
+.instagram-gallery-follow a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .instagram-gallery-card {
+        flex-basis: 85%;
+        width: 85%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .instagram-gallery-track {
+        scroll-behavior: auto;
+    }
+}
+
+/* END OF Instagram horizontal carousel */
