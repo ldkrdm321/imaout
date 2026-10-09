@@ -724,7 +724,7 @@ figcaption {
     stroke-linejoin: round;
     vector-effect: non-scaling-stroke;
     stroke-dasharray: 90 910;
-    animation: heartbeat-travel 3s linear infinite;
+    animation: heartbeat-travel 1s linear infinite;
 }
 
 @keyframes heartbeat-travel {
