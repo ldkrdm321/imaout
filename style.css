@@ -568,7 +568,7 @@ figcaption {
 
 
 .breaking-news h2 {
-    color: #24517a;
+    color: #6fa8ddff;
     font-size: 29px;
     line-height: 1.2;
     margin: 0 0 14px;
@@ -584,7 +584,7 @@ figcaption {
 
 .breaking-news-link a {
     display: inline-block;
-    background: #24517a;
+    background: #6fa8ddff;
     color: #ffffff;
     padding: 11px 16px;
     font-weight: 700;
@@ -592,7 +592,7 @@ figcaption {
 }
 
 .breaking-news-link a:hover {
-    background: #173b5d;
+    background: #6fa8ddff;
     color: #ffffff;
 }
 
