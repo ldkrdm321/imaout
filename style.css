@@ -535,13 +535,37 @@ figcaption {
     letter-spacing: 0.08em;
 }
 
+
+/* Blinking / pulsing breaking-news dot */
+
 .breaking-news-dot {
     display: inline-block;
+    flex-shrink: 0;
     width: 9px;
     height: 9px;
     border-radius: 50%;
     background: #d62828;
+    animation: breaking-news-pulse 1.2s ease-in-out infinite;
 }
+
+@keyframes breaking-news-pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.3;
+        transform: scale(1.35);
+    }
+}
+
+/* Respect visitors who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .breaking-news-dot {
+        animation: none;
+    }
+}
+
 
 .breaking-news h2 {
     color: #24517a;
