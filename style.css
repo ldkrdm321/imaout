@@ -488,3 +488,28 @@ figcaption {
     height: 100%;
     border: 0;
 }
+
+
+/*for press release*/
+
+.article-meta {
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.article-body blockquote {
+    font-size: 20px;
+    line-height: 1.55;
+    margin: 35px 0 20px;
+}
+
+.article-body h2 {
+    margin-top: 55px;
+}
+
+.article-body h3 {
+    margin-top: 30px;
+}
+
+/*end of for press release*/
