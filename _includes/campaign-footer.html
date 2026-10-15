@@ -196,6 +196,21 @@
 
     <hr>
 
+    {% case page.lang %}
+
+    {% when "ar" %}
+
+    <div class="video">
+    <iframe
+        src="https://www.youtube.com/embed/q9vyEUpjTLY"
+        title="YouTube video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+</div>
+
+    {% else %}
+
     <div class="video">
     <iframe
         src="https://www.youtube.com/embed/s-aPB2-Rq5U"
@@ -204,6 +219,8 @@
         allowfullscreen>
     </iframe>
 </div>
+
+    {% endcase %}
 
 <hr>
 
